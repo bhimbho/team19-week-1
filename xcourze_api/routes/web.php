@@ -17,17 +17,17 @@
 //     return $router->app->version();
 // });
 
-$router->get('/', 'adminController@show');
-$router->post('/adminlogin', 'adminController@login');
+// $router->get('/', 'adminController@show');
+// $router->post('/adminlogin', 'adminController@login');
 
-// $router->group(['prefix' => 'api'], function () use ($router) {
-//     $router->post('/adminlogin',  ['uses' => 'adminrController@index']);
+$router->group(['prefix' => 'api/v1/'], function () use ($router) {
+    $router->post('/adminlogin',  ['uses' => 'adminrController@login']);
   
-//     $router->get('hello', ['uses' => 'adminrController@show']);
+    // $router->get('hello', ['uses' => 'adminrController@show']);
   
-//     // $router->post('authors', ['uses' => 'AuthorController@create']);
+    // // $router->post('authors', ['uses' => 'AuthorController@create']);
   
-//     // $router->delete('authors/{id}', ['uses' => 'AuthorController@delete']);
+    // // $router->delete('authors/{id}', ['uses' => 'AuthorController@delete']);
   
-//     // $router->put('authors/{id}', ['uses' => 'AuthorController@update']);
-//   });
+    // // $router->put('authors/{id}', ['uses' => 'AuthorController@update']);
+  });
